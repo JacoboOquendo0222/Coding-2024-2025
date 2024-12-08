@@ -7,4 +7,20 @@ if answer=="c":
     score=score+1
 else:
     print("incorrect")
-    
+print("Where is Sleepy Hollow?")
+print("a c-town b New York c California d Canada")
+answer=input()
+if answer=="b":
+    print("correct")
+    score=score+1
+else:
+    print("incorrect")
+print("Where is Paris located?")
+print("a Russia b England c Denmark d France")
+answer=input()
+if answer=="d":
+    print("correct")
+    score=score+1
+else:
+    print("incorrect")
+print(score,"out of 3")
