@@ -1,8 +1,8 @@
 import random
 from random import randint
-number=randint(1,50)
+number=randint(1,1000)
 tries=0
-while tries<6:
+while tries<10:
     tries=tries+1
     print("Guess",tries)
     guess=int(input("What is your guess?"))
