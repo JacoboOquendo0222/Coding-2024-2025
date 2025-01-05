@@ -1,0 +1,31 @@
+'''
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+'''
+print("The Size Of The Diamond?")
+Size=int(input())
+Space=(Size-1)
+stars=1
+for i in range(Size):
+    for o in range(Space):
+        print(end=" ")
+    for e in range(stars):
+        print("*",end="")
+    print()
+    Space=Space-1
+    stars=stars+2
+for i in range(Size):
+    for o in range(Space):
+        print(end=" ")
+    for e in range(stars):
+        print("*",end="")
+    print()
+    Space=Space+1
+    stars=stars-2
