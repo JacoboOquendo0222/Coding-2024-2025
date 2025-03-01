@@ -30,3 +30,24 @@ for i in array:
     comlum=int(input())-1
     playingship(board=playerboard,shipsize=i,row=row,comlum=comlum,horizontaly=horizontaly,verticaly=verticaly)
 printboard(playerboard)
+for i in array:
+    horizontaly=False
+    verticaly=False
+    number=randint(0,1)
+    if number==0:
+        horizontaly=True
+        row=randint(0,9)
+        comlum=randint(0,10-i)
+    if number==1:
+        row=randint(0,10-i)
+        comlum=randint(0,9)
+        verticaly=True
+    playingship(board=computerboard,shipsize=i,row=row,comlum=comlum,horizontaly=horizontaly,verticaly=verticaly)
+def playingamove(guessingboard,shipboard,row,comlum)
+while True:
+    printboard(playerboard)
+    printboard(guessingboard)
+    print("what row do you wnat to play in?")
+    row=int(input())-1
+    print("what comlum do you want to play in?")
+    comlum=int(input())-1
