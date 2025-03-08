@@ -43,7 +43,13 @@ for i in array:
         comlum=randint(0,9)
         verticaly=True
     playingship(board=computerboard,shipsize=i,row=row,comlum=comlum,horizontaly=horizontaly,verticaly=verticaly)
-def playingamove(guessingboard,shipboard,row,comlum)
+def playingamove(guessingboard,shipboard,row,comlum):
+    if shipboard[row][comlum]=="m":
+        print("That is a hit!")
+        guessingboard[row][comlum]="h"
+    else:
+        print("That is a miss")
+        guessingboard[row][comlum]="s"
 while True:
     printboard(playerboard)
     printboard(guessingboard)
@@ -51,3 +57,16 @@ while True:
     row=int(input())-1
     print("what comlum do you want to play in?")
     comlum=int(input())-1
+    playingamove(guessingboard,computerboard,row=row,comlum=comlum,)
+    print("its computers turn")
+    row=randint (0,9)
+    comlum=randint (0,9)
+    playingamove(guessingboard=playerboard,shipboard=playerboard,row=row,comlum=comlum)
+    computerwins=True
+    for i in range(0,9):
+        for o in range(0,9):
+            if playerboard[i][o]=="m":
+                computerwins=False
+    if computerwins==True:
+        print("Computer won")
+        exit(0)
