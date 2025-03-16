@@ -70,3 +70,13 @@ while True:
     if computerwins==True:
         print("Computer won")
         exit(0)
+    playerwins=True
+    for r in range(0,9):
+        for t in range(0,9):
+            if computerboard[r][t]=="m":
+                if not guessingboard[r][t]=="h":
+                    playerwins=False
+    if playerwins==True:
+        print("You won")
+        exit(0)
+                
