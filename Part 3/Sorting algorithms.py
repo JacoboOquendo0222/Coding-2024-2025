@@ -23,8 +23,26 @@ def bubble_sort(placements):
                 stuff=placements[oie+1]
                 placements[oie+1]= placements[oie]
                 placements[oie]=stuff
-def merge(placements):
-    for ei in range(0,len(placements))                
+def merge(placements,start,end):
+    middle=int((start+end)/2)
+    inside=[]
+    location,safe=start,middle+1
+    while location<middle+1 and safe<end+1:
+        if placements[location]>placements[safe]:
+            inside.append(placements[safe])
+            safe=safe+1
+        else:
+            inside.append(placements[location])
+            location=location+1
+    while location<middle+1:
+        inside.append(placements[location])       
+        location=location+1
+    while safe<end+1:
+        inside.append(placements[safe])
+        safe=safe+1
+    print(inside)
+    for ai in range(0,len(inside)):
+        placements[start+ai]=inside[ai]
 storage=[]
 print("How long should the list be?")
 long=int(input())
@@ -32,5 +50,5 @@ for a in range(long):
     print("What number should be in the list?")
     number=int(input())
     storage.append(number)
-bubble_sort(storage)
+merge(storage,0,long-1)
 print(storage)
