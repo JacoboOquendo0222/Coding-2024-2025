@@ -1,3 +1,3 @@
 from Cards import card
-deck=card(1,"Diamonds")
-print(deck.toString())
+deck=card(13,"Diamonds")
+print(deck.value)
