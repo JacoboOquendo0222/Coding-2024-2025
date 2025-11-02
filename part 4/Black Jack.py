@@ -1,12 +1,19 @@
 from Deck import deck
 def values(playerhand):
     totalvalue=(0)
+    acecount=(0)
     for card in playerhand:
         if card.value<=10:
             totalvalue=totalvalue+card.value
         else:
             card.value>10
             totalvalue=totalvalue+10
+        if card.value==1:
+            acecount+=1
+    for i in range(acecount):
+        totalvalue+=10
+        if totalvalue>21:
+            totalvalue-=10
     return totalvalue
 clubs=deck()
 clubs.shuffle()
@@ -43,4 +50,14 @@ while playing==True:
     if dealervalue>21:
         if value>21:
             print("Tie")
-    break
+        else:
+            print("Player Wins")
+    elif value>21:
+        print("Dealer Wins")
+    else:
+        if value>dealervalue:
+            print("Player Wins")
+        if value<dealervalue:
+            print("Dealer Wins")
+        if value==dealervalue:
+            print("Tie")
