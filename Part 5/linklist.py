@@ -12,20 +12,32 @@ class linklist:
             start=node.nextnode(start)
         return start 
     def addnode(self,position,nodes):
+        self.size+=1
         if position==0:
             node.setnextnode(nodes,self.head)  
             self.head=nodes
         else:
-            add=node.getnode(self,position-1)
+            add=self.getnode(position-1)
             node.setnextnode(nodes,add.nextnode())
             node.setnextnode(add,nodes)
     def add(self,position,value):
         adding=node(value)
         self.addnode(position,adding)
+    def addend(self,value):
+        self.add(self.size,value)
     def __str__(self):
         rode=""
         start=self.head
         for i in range(self.size):
-            rode=rode+str(start)
+            rode=rode+str(start)+"\n"
             start=node.nextnode(start)
         return rode
+    def deleatenode(self,position):
+        self.size-=1
+        if position==0:
+            start=node.nextnode(self.head)
+            self.head=start
+        else:
+            start=self.getnode(position-1)
+            nextnextnode=node.nextnode(node.nextnode(start))
+            node.setnextnode(start,nextnextnode)

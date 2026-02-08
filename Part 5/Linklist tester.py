@@ -1,7 +1,8 @@
 from linklist import linklist
 listing=linklist()
-listing.add(position=0,value=921)
-listing.add(position=0,value=3)
-listing.add(position=0,value=54)
-listing.add(position=0,value=2)
+listing.addend(value=921)
+listing.addend(value=3)
+listing.addend(value=54)
+listing.addend(value=2)
+listing.deleatenode(position=3)
 print(listing)
