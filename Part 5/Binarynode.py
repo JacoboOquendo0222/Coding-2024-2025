@@ -13,5 +13,8 @@ class Binarynode:
         self.left=abdominal
     def setright(self,abdominal):
         self.right=abdominal
-    
-    
+    def setvalue(self,value):
+        self.value=value
+    def __str__(self):
+        return str(self.value)
+
