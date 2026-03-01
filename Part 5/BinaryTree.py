@@ -4,20 +4,30 @@ class tree:
         self.size=0
         self.head=None
     def addnode(self,head,nodes):
-        if head is None:
-            self.size+=1
-            head=nodes
-        else:
-            headvalue=head.getvalue()
-            nodevalue=nodes.getvalue()
-            if headvalue>=nodevalue:
-                leftnode=head.getleft()
-                self.addnode(leftnode,nodes)
+        headvalue=head.getvalue()
+        nodevalue=nodes.getvalue()
+        if headvalue>=nodevalue:
+            leftnode=head.getleft()
+            if leftnode is None:
+                self.size+=1
+                head.setleft(nodes)
             else:
-                rightnode=head.getright()
+                self.addnode(leftnode,nodes)
+        else:
+            rightnode=head.getright()
+            if rightnode is None:
+                self.size+=1
+                head.setright(nodes)
+            else:
                 self.addnode(rightnode,nodes)
     def add(self,value):
         binode=Binarynode(value)
-        self.addnode(self.head,binode)
+        if self.head is None:
+            self.size+=1
+            self.head=binode
+        else:
+            self.addnode(self.head,binode)
     def __len__(self):
         return self.size
+    def aslist(self):
+        return self.head.aslist()

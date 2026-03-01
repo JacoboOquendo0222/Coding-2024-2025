@@ -17,4 +17,14 @@ class Binarynode:
         self.value=value
     def __str__(self):
         return str(self.value)
+    def aslist(self):
+        if self.left is None:
+            leftlist=[]
+        else:
+            leftlist=self.left.aslist()
+        if self.right is None:
+            rightlist=[]
+        else:
+            rightlist=self.right.aslist()
+        return leftlist+[self.value]+rightlist
 
