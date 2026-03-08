@@ -27,4 +27,9 @@ class Binarynode:
         else:
             rightlist=self.right.aslist()
         return leftlist+[self.value]+rightlist
+    def maxvalue(self):
+        if self.right==None:
+            return self
+        else:
+            return self.right.maxvalue()
 

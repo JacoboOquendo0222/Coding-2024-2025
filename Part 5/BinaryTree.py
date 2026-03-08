@@ -31,3 +31,27 @@ class tree:
         return self.size
     def aslist(self):
         return self.head.aslist()
+    def remove(self,value):
+        self.head=self.removenode(value,self.head)
+    def removenode(self,value,node):
+        if node==None:
+            return None
+        else:
+            nodevalue=node.getvalue()
+            if nodevalue==value:
+                self.size-=1
+                if node.getleft()==None and node.getright()==None:
+                    return None
+                elif node.getleft()==None:
+                    
+                else
+            elif nodevalue>value:
+                newleftnode=self.removenode(value,node.getleft())
+                node.setleft(newleftnode)
+                return node
+            else:
+                newrightnode=self.removenode(value,node.getringt())
+                node.setright(newrightnode)
+                return node
+
+ 
