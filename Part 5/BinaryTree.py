@@ -43,15 +43,20 @@ class tree:
                 if node.getleft()==None and node.getright()==None:
                     return None
                 elif node.getleft()==None:
-                    
-                else
+                    return node.getright()
+                elif node.getright()==None:
+                    return node.getleft()
+                else:
+                    sucessor=node.getleft().maxvalue()
+                    node.setvalue(sucessor.getvalue())     
+                    sucessor.setvalue(nodevalue)
+                    node.setleft(self.removenode(nodevalue,node.getleft()))
+                    return node
             elif nodevalue>value:
                 newleftnode=self.removenode(value,node.getleft())
                 node.setleft(newleftnode)
                 return node
             else:
-                newrightnode=self.removenode(value,node.getringt())
+                newrightnode=self.removenode(value,node.getright())
                 node.setright(newrightnode)
                 return node
-
- 
