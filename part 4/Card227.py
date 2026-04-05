@@ -1,3 +1,15 @@
 from Cards import card
 deck=card(13,"Diamonds")
 print(deck.value)
+from inherterence import procard
+deck=procard(13,"Diamonds")
+print(deck)
+deck.play()
+print(deck.gettimesplayed())
+deck.play()
+deck.play()
+deck.play()
+deck.play()
+deck.play()
+deck.play()
+print(deck.gettimesplayed())
