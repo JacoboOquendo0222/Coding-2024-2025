@@ -14,6 +14,6 @@ class nodeavl(Binarynode):
         self.maxheight=1+max(leftheight,rightheight)
         self.balancefactor=rightheight-leftheight
     def getmaxheight(self):
-        return self.getmaxheight
+        return self.maxheight
     def getbalancefactor(self):
-        return self.getbalancefactor
+        return self.balancefactor
