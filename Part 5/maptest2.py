@@ -1,0 +1,6 @@
+from map import map
+guide=map()
+guide.add("a",1)
+guide.add("b",2)
+guide.add("c",3)
+print(guide.get("a"))
